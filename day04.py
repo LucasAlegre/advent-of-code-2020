@@ -2,18 +2,14 @@ import re
 
 def read_passports(filename='inputs/day04.txt'):
     with open(filename) as f:
-        lines = [line.strip() for line in f.readlines()]
+        lines = f.read().split('\n\n')
     passports = []
-    p = {}
     for line in lines:
-        if line == '':
-            passports.append(p)
-            p = {}
-        else:
-            for item in line.split(' '):
-                key, value = tuple(item.split(':'))
-                p.update({key: value})
-    passports.append(p)
+        p = {}
+        for item in line.replace('\n', ' ').split(' '):
+            key, value = tuple(item.split(':'))
+            p.update({key: value})
+        passports.append(p)
     return passports
 
 def has_required_fields(passport):
