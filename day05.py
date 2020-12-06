@@ -1,8 +1,7 @@
 def get_seat_id(boardpass):
     for key, value in {'B': '1', 'F': '0', 'R': '1', 'L': '0'}.items():
         boardpass = boardpass.replace(key, value)
-    row, column = int(boardpass[:-3], 2), int(boardpass[-3:], 2)
-    return row*8 + column
+    return int(boardpass, 2)
 
 def part1(boardpasses):
     return max(get_seat_id(boardpass) for boardpass in boardpasses)
