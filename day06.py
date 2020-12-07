@@ -14,8 +14,7 @@ def count_questions_anyone(group):
 def count_questions_everyone(group):
     questions = set(group[0])
     for person in group[1:]:
-        person_questions = set(person)
-        questions.intersection_update(person_questions)
+        questions.intersection_update(set(person))
     return len(questions)
 
 def part1(groups):
