@@ -55,10 +55,8 @@ class GameBoy:
             if self.is_loop() is False:
                 return self.acc
 
-
 gameBoy = GameBoy()
 # Part 1
 print(gameBoy.is_loop())
-
 # Part 2
 print(gameBoy.fix_program())
