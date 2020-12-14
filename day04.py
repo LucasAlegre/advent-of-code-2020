@@ -6,8 +6,8 @@ def read_passports(filename='inputs/day04.txt'):
     passports = []
     for line in lines:
         p = {}
-        for item in line.replace('\n', ' ').split(' '):
-            key, value = tuple(item.split(':'))
+        for item in line.replace("\n", " ").split(" "):
+            key, value = tuple(item.split(":"))
             p.update({key: value})
         passports.append(p)
     return passports
